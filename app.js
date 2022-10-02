@@ -13,7 +13,7 @@ function createTeam() {
         this.employee = new Manager(name);
     }),
     type: 'text',
-    name: 'ID',
+    name: 'id',
     message: "What is your team manager's ID number?"
     .then(({ id }) => {
         this.employee = new Employee(id);

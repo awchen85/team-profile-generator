@@ -1,12 +1,23 @@
-const Employee = require('../lib/Employee');
+const { default: test } = require('node:test');
 const Manager = require('../lib/Manager');
 
-test('creates a manager', () => {
-    const employee = new Manager('Bob');
 
-    expect(employee.name).toBe('Bob');
-    expect(employee.ID).toEqual(expect.any(Number));
-    expect(employee.email).toEqual(expect.any(Object));
-    expect(employee.role).toEqual(expect.any(Number));
+test('sets office number using constructor', () => {
+    const employee = new Manager("Bob", "001", "bob@gmail.com", "555-555-5555");
+    expect(employee.officeNumber).toBe("555-555-5555");
+});
 
+test("fetch office number from getOfficeNumber", () => {
+    const employee = new Manager("Bob", "001", "bob@gmail.com", "555-555-5555");
+    expect(employee.getOfficeNumber()).toBe("555-555-5555");
+});
+
+test ("fetch employees role from getRole", () => {
+    const employee = new Manager("Bob", "001", "bob@gmail.com", "555-555-5555");
+    expect(employee.getRole()).toBe("Manager");
+});
+
+test("fetch employee id from getId from employee super", () => {
+    const employee = new Manager("Bob", "001", "bob@gmail.com", "555-555-5555");
+    expect(employee.getID()).toBe("001");
 });

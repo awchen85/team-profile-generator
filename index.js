@@ -16,9 +16,8 @@ const savePath = path.join(__dirname, "dist", "index.html");
 const teamData = [];
 
 function app() {
-    function createTeam() {
+        function createTeam() {
 
-`Please build your team`
 inquirer
     .prompt ([
     {
@@ -43,6 +42,7 @@ inquirer
             saveHtml();
         }
     });
+}
     function createManager() {
 
     inquirer
@@ -157,5 +157,5 @@ function saveHtml() {
     fs.writeFileSync(savePath, createHtml(teamData), "UTF-8");
         }
 }
-}
+
 app();

@@ -86,7 +86,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 </head>
 
 <body>
-<div class="navbar navbar-dark bg-danger>
+<div class="navbar navbar-dark bg-danger">
     <h1> My team profile! </h1>
 </div>
 <div class="container">

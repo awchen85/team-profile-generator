@@ -7,6 +7,7 @@ const Manager = require("./lib/Manager")
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const createHtml = require('./src/createHTML.js');
+const { rejects } = require('assert');
 
 //Generate HTML Page
 
@@ -37,7 +38,7 @@ inquirer
             case "Intern":
                 createIntern();
                 break;
-           case "No more employees":
+           case "No more Employees":
             saveHtml();
         }
     });
@@ -135,7 +136,7 @@ message: "What is your Intern's email address?"
 {
     type: 'text',
     name: 'school',
-    message: "What is your Intern's School?"
+    message: "What is your Intern's school?"
 },
 ])
 .then((answers) => {
@@ -154,7 +155,13 @@ createTeam();
 };
 
 function saveHtml() {
-    fs.writeFile('./dist/index.html', createHtml(teamData), "UTF-8");
-};
-
+    fs.writeFile('./dist/index.html', createHtml(teamData), (err) => {
+        //if there's an error, reject promise and send error
+        if (err) {
+            rejects(err);
+            //return out of function
+            return;
+        }
+    });
+    }
 app();

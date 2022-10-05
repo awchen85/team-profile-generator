@@ -153,17 +153,8 @@ message: "What is your Intern's email address?"
 createTeam();
 };
 
-const writeFile = data => {
-    fs.writeFile('./dist/index.html', teamData, err => {
-        //if no error
-        if (err) {
-            console.log(err);
-            return;
-        } else {
-            console.log("Your team profile has been successfully created! Please check index.html")
-        }
-    })
+function saveHtml() {
+    fs.writeFile('./dist/index.html', createHtml(teamData), "UTF-8");
 };
-
 
 app();

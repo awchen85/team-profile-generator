@@ -16,8 +16,8 @@ const createTeam = (team) => {
   const generateEngineer = (engineer) => {
     return `
 <div class="card mt-5">
-    <div class="card-body border border-primary">
-        <h5 class="card-title font-weight-bold text-center">${engineer.getName()}</h5>
+<div class="card-body border border-info  bg-primary p-2" style="--bs-bg-opacity: .5">
+        <h5 class="card-title font-weight-bold text-center bg-primary p-2">${engineer.getName()}</h5>
         <h6 class="card-subtitle text-center mb-2 text-muted">Title: ${engineer.getRole()}</h6>
         <p class="card-text text-center">Employee Id: ${engineer.getId()}</p>
         <a href="mailto:${engineer.getEmail()}" target="_blank" class="card-link">${engineer.getEmail()}</a><br>
@@ -31,8 +31,8 @@ const createTeam = (team) => {
     const generateIntern = (intern) => {
       return `
   <div class="card mt-5">
-      <div class="card-body border border-warning">
-          <h5 class="card-title font-weight-bold text-center">${intern.getName()}</h5>
+  <div class="card-body border border-info  bg-warning p-2" style="--bs-bg-opacity: .5">
+          <h5 class="card-title font-weight-bold text-center bg-warning p-2 text-white">${intern.getName()}</h5>
           <h6 class="card-subtitle text-center mb-2 text-muted">Title: ${intern.getRole()}</h6>
           <p class="card-text text-center">Employee Id: ${intern.getId()}</p>
           <a href="mailto:${intern.getEmail()}" target="_blank" class="card-link">${intern.getEmail()}</a>

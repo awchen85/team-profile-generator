@@ -85,22 +85,22 @@ inquirer
         .prompt([
     {
     type: 'text',
-    name: 'name',
+    name: 'engineerName',
     message: "What is your Engineer's name?"
     },
     {
     type: 'text',
-    name: 'id',
+    name: 'engineerId',
     message: "What is your team engineer's ID number?"
     },
     {
     type: 'text',
-    name: 'email',
+    name: 'engineerEmail',
     message: "What is your engineer's email address?"
     },
     {
         type: 'text',
-        name: 'github',
+        name: 'engineerGithub',
         message: "What is your engineer's github?"
     },
     ])
@@ -120,22 +120,22 @@ function createIntern() {
     .prompt([
 {
 type: 'text',
-name: 'name',
+name: 'internName',
 message: "What is your Intern's name?"
 },
 {
 type: 'text',
-name: 'id',
+name: 'internId',
 message: "What is your team Intern's ID number?"
 },
 {
 type: 'text',
-name: 'email',
+name: 'internEmail',
 message: "What is your Intern's email address?"
 },
 {
     type: 'text',
-    name: 'school',
+    name: 'internSchool',
     message: "What is your Intern's school?"
 },
 ])

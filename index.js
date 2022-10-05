@@ -1,16 +1,15 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const path = require("path");
 
 //require objects
 
 const Manager = require("./lib/Manager")
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const createHtml = require('./src/createHTML');
+const createHtml = require('./src/createHTML.js');
 
 //Generate HTML Page
-const savePath = path.join(__dirname, "dist", "index.html");
+
 
 //Store team data
 const teamData = [];
@@ -71,7 +70,7 @@ inquirer
     .then((answers) => {
         const manager = new Manager(
             answers.managerName,
-            answers.managerd,
+            answers.managerId,
             answers.managerEmail,
             answers.managerOfficeNumber,
         );
@@ -152,10 +151,19 @@ message: "What is your Intern's email address?"
 }
 
 createTeam();
+};
 
-function saveHtml() {
-    fs.writeFileSync(savePath, createHtml(teamData), "UTF-8");
+const writeFile = data => {
+    fs.writeFile('./dist/index.html', teamData, err => {
+        //if no error
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("Your team profile has been successfully created! Please check index.html")
         }
-}
+    })
+};
+
 
 app();

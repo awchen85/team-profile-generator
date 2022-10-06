@@ -18,5 +18,5 @@ test ("fetch employees role from getRole", () => {
 
 test("fetch employee id from getId from employee super", () => {
     const employee = new Manager("Bob", "001", "bob@gmail.com", "555-555-5555");
-    expect(employee.getID()).toBe("001");
+    expect(employee.getId()).toBe("001");
 });
